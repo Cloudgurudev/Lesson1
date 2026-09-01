@@ -50,3 +50,5 @@ jobs:
           name: artifact-1
           path: |
             package*
+          rentention days: 10 days
+          
