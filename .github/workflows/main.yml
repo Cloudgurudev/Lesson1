@@ -62,4 +62,15 @@ jobs:
           path: |
             package*
           rentention days: 10 days
-          
+
+      - name: Deploy
+        run: ech0 'my code is deployed' 
+
+
+      - name: rollback
+        if: failure()
+        run: echo 'rollback is done'
+      
+
+        
+      
