@@ -4,11 +4,16 @@ on:
   push:
     branches:
       - master
+      - main
+  workflow_dispatch: 
 
 jobs:
   build_and_package:
     name: BUILD-JOB
-    runs-on: ubuntu-latest
+
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    
+    runs-on: ubuntu-slim
 
     permissions:
       actions: read
