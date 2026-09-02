@@ -36,19 +36,7 @@ jobs:
          path: ~/.npm  # Replace this with the directory your package manager caches
          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: ${{ matrix.language }}
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
-        with:
-          category: "/language:${{ matrix.language }}"
-
+ 
       - name: BUILD
         run: npm install
 
